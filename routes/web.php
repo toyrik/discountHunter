@@ -21,4 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::group(['middlevare' => 'auth', 'namespace' => 'App\Http\Controolers'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('/get-discount', [App\Http\Controllers\HomeController::class, 'discount'])->name('discount');
+    Route::post('/check-discount', [App\Http\Controllers\HomeController::class, 'checkDiscount'])->name('check-discount');
 });
